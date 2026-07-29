@@ -39,7 +39,7 @@ h2 {
   text-align: center;   
 }
 
-.nav-menu {
+nav.menu {
     display: flex;
     width: 100%;
 }
