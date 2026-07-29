@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'rio-grand'; 
+  src: url('../fonts/rio-grand.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Or apply to specific headings only */
+h1.western {
+  font-family: 'rio-grand', sans-serif;
+  color: darkolivegreen;
+  font-size: 36px;
+  text-align: center;   
+}
+
+h2 {
+  font-family: sans-serif, arial;
+  color: black;
+  font-size: 30px;
+  text-align: center;   
+}
+
+h2.western {
+  font-family: 'rio-grand', sans-serif;
+  color: darkolivegreen;
+  font-size: 30px;
+  text-align: center;   
+}
+
+h2 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  font-size: 30px;
+  text-align: center;   
+}
+
+.nav-menu {
+    display: flex;
+    width: 100%;
+}
+
+.nav-link {
+  text-decoration: underline;
+  padding: 10px;
+}
+
+ul.horizontal-center {
+  display: flex;                  
+  justify-content: center;       
+  list-style-type: none; 
+  width: 100%;        
+  padding: 0;                  
+  margin: 0; 
+  gap: 10px; 
+}
+
+.flex-container {
+  display: flex;       /* Forces items onto the same line */
+  align-items: center; /* Vertically centers the text and image */
+  /*gap: 15px;           /* Adds space between the image and text */
+}
+
+div .introduction {
+  width:100%;
+  max-width: 100%;
+  font-size: larger;
+}
+
+p .biography {
+  width:100%;
+  max-width: 100%;
+  font-family: sans-serif,arial;
+  font-size: larger;
+}
+
+img {
+  height: auto;
+}
+
+
+/* 1. Create the flex container */
+.card-container {
+  display: flex;
+  align-items: stretch; /* Forces both columns to have identical height */
+  width: 90%;
+  max-width: 90%;
+  border: 1px solid #ccc;*/
+  padding: 20px;
+}
+
+/* 2. Allocate space for the text */
+.text-content {
+  flex: 1;             /* Takes up remaining available space */
+  padding: 20px;
+}
+
+/* 3. Allocate a fixed or percentage width for the image column */
+.image-wrapper {
+  width: 15%;
+  min-width: 100px;    /* Adjust this percentage to your preferred layout width */
+  position: relative;  /* Helps cleanly contain absolute image constraints if needed */
+}
+
+/* 4. Magic properties to make the image fill the height without breaking aspect ratio */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;        /* Fills 100% of the text-defined parent height */
+  object-fit: cover;   /* Crops the image smoothly instead of squishing or stretching it */
+  display: block;      /* Removes undesirable bottom gaps native to inline elements */
+}
+
+/* horizontal scrolling of images */
+.scroll-container {
+  display: flex; 
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  gap: 15px; 
+  padding: 10px; 
+  -webkit-overflow-scrolling: touch; 
+}
+
+.scroll-container img {
+  height: 250px; 
+  width: auto; 
+  flex-shrink: 0; 
+  border-radius: 8px; 
+}
+
+/* display faded background image for fur trade*/
+.faded-bg-trade {
+  position: relative;         /* Establishes a positioning context for the background */
+  isolation: isolate;         /* Keeps the pseudo-element background behind the text */
+  padding: 40px;
+  min-height: 300px;
+}
+
+.faded-bg-trade::before {
+  content: "";
+  position: absolute;
+  inset: 0;                   /* Stretches the background to cover the entire container */
+  z-index: -1;                /* Places the image behind the content */
+  
+  /* Background image setup */
+  background-image: url("../images/fur-trade/Beaver3.jpg");
+  background-position: center;
+
+  /* Control the fade amount (0.0 = completely invisible, 1.0 = fully visible) */
+  opacity: 0.3;               
+}
+/* display faded background image for mountain men*/
+.faded-bg-mountain-men {
+  position: relative;         /* Establishes a positioning context for the background */
+  isolation: isolate;         /* Keeps the pseudo-element background behind the text */
+  padding: 40px;
+  min-height: 300px;
+}
+
+.faded-bg-mountain-men::before {
+  content: "";
+  position: absolute;
+  inset: 0;                   /* Stretches the background to cover the entire container */
+  z-index: -1;                /* Places the image behind the content */
+  
+  /* Background image setup */
+  background-image: url("../images/mountain-men/Mountain-Man-Castle-Rock.jpg");
+  background-size: cover;
+  background-position: center;
+  
+  /* Control the fade amount (0.0 = completely invisible, 1.0 = fully visible) */
+  opacity: 0.3;               
+}
+
+/* display faded background image for rendezvous*/
+.faded-bg-rendezvous {
+  position: relative;         /* Establishes a positioning context for the background */
+  isolation: isolate;         /* Keeps the pseudo-element background behind the text */
+  padding: 40px;
+  min-height: 300px;
+}
+
+.faded-bg-rendezvous::before {
+  content: "";
+  position: absolute;
+  inset: 0;                   /* Stretches the background to cover the entire container */
+  z-index: -1;                /* Places the image behind the content */
+  
+  /* Background image setup */
+  background-image: url("../images/rendezvous/OldCabin.jpg");
+  background-size: cover;
+  background-position: center;
+  
+  /* Control the fade amount (0.0 = completely invisible, 1.0 = fully visible) */
+  opacity: 0.3;               
+}
+
+@media screen and (max-width: 1200px) {
+  .image-wrapper img {
+    max-height: 250px;     
+    object-fit: cover;   /* Crops the image smoothly instead of squishing or stretching it */
+    display: block;      /* Removes undesirable bottom gaps native to inline elements */
+  }
+  div .introduction {
+    font-size: medium;  
+  }
+  p {
+    font-family: sans-serif,arial;
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .image-wrapper img {
+    max-height: 150px;   
+    object-fit: cover;   /* Crops the image smoothly instead of squishing or stretching it */
+    display: block;      /* Removes undesirable bottom gaps native to inline elements */
+  }
+  div .introduction {
+    font-size: smaller;  
+  }
+  p {
+    font-family: sans-serif,arial;
+    font-size: smaller;
+  }
+}
