@@ -75,7 +75,6 @@ div .introduction {
 div .biography {
   width: 100%;
   max-width: 100%;
-  /*font-family: sans-serif,arial;*/
   font-size: large;
 }
 
@@ -89,7 +88,6 @@ div .biography {
   display: flex;
   align-items: stretch; /* Forces both columns to have identical height */
   width: 100%;
-  /*max-width: 100%;*/
   border: 1px solid #ccc;
   padding: 20px;
 }
@@ -103,7 +101,6 @@ div .biography {
 
 /* 3. Allocate a fixed or percentage width for the image column */
 .image-wrapper {
-  /*width: 15%;*/
   height: 200px;
   width: auto;
   /*min-width: 100px;    /* Adjust this percentage to your preferred layout width */
