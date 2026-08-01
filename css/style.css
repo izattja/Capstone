@@ -68,28 +68,29 @@ ul.horizontal-center {
 div .introduction {
   width:100%;
   max-width: 100%;
-  font-size: larger;
+  font-size: large;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-p .biography {
-  width:100%;
+div .biography {
+  width: 100%;
   max-width: 100%;
-  font-family: sans-serif,arial;
-  font-size: larger;
+  /*font-family: sans-serif,arial;*/
+  font-size: large;
 }
 
-img {
-  height: auto;
+.gallery-title {
+  font-size: large;
+  text-align: center;
 }
-
 
 /* 1. Create the flex container */
 .card-container {
   display: flex;
   align-items: stretch; /* Forces both columns to have identical height */
-  width: 90%;
-  max-width: 90%;
-  border: 1px solid #ccc;*/
+  width: 100%;
+  /*max-width: 100%;*/
+  border: 1px solid #ccc;
   padding: 20px;
 }
 
@@ -97,12 +98,15 @@ img {
 .text-content {
   flex: 1;             /* Takes up remaining available space */
   padding: 20px;
+  font-size: large;
 }
 
 /* 3. Allocate a fixed or percentage width for the image column */
 .image-wrapper {
-  width: 15%;
-  min-width: 100px;    /* Adjust this percentage to your preferred layout width */
+  /*width: 15%;*/
+  height: 200px;
+  width: auto;
+  /*min-width: 100px;    /* Adjust this percentage to your preferred layout width */
   position: relative;  /* Helps cleanly contain absolute image constraints if needed */
 }
 
@@ -146,7 +150,8 @@ img {
   z-index: -1;                /* Places the image behind the content */
   
   /* Background image setup */
-  background-image: url("../images/fur-trade/Beaver3.jpg");
+  background-image: url("../images/fur-trade/Beav1.jpg");
+  background-size: cover;
   background-position: center;
 
   /* Control the fade amount (0.0 = completely invisible, 1.0 = fully visible) */
@@ -198,32 +203,139 @@ img {
   opacity: 0.3;               
 }
 
-@media screen and (max-width: 1200px) {
+/* set up bootstrap carousel*/
+.item {
+  height: auto; /* Set your preferred reduced height here */
+  width: 100%
+}
+
+.item img {
+  height: 100%;
+  width: auto;
+  object-fit: cover; /* Crops the image to fit the container without distortion */
+  object-position: center; /* Centers the focus of the cropped image */
+}
+
+.carousel-inner > .item img,
+.carousel-inner > .item > a > img {
+  width: 40vh;
+  margin: auto;
+}
+
+/* set up lightbox */
+
+/* Thumbnail Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  border: 3px black solid;
+}
+.gallery img {
+  /*width: 100%;*/
+  width: 10vw;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 2px black solid;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox Background Cover */
+.lightbox {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+/* Active Toggle State */
+.lightbox.active {
+  display: flex;
+}
+
+/* Lightbox Center Image */
+.lightbox-content img {
+  max-width: 85vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 3px solid white;
+}
+
+/* Action Controls */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* adjust for tablet screen size */
+@media screen and (max-width: 1000px) {
   .image-wrapper img {
-    max-height: 250px;     
+    max-height: 250px;   
     object-fit: cover;   /* Crops the image smoothly instead of squishing or stretching it */
     display: block;      /* Removes undesirable bottom gaps native to inline elements */
   }
-  div .introduction {
+  div .introduction, div .gallery-title, div .biography {
     font-size: medium;  
   }
-  p {
-    font-family: sans-serif,arial;
-    font-size: medium;
+
+  .item {
+    height: 125px; /* Set your preferred reduced height here */
+    width: 100%;
+  }
+  .carousel-inner > .item img,
+  .carousel-inner > .item > a > img {
+    width: 20vh;
+    margin: auto;
   }
 }
 
+/* adjust for smallest screen size */
 @media screen and (max-width: 772px) {
   .image-wrapper img {
     max-height: 150px;   
     object-fit: cover;   /* Crops the image smoothly instead of squishing or stretching it */
     display: block;      /* Removes undesirable bottom gaps native to inline elements */
   }
-  div .introduction {
-    font-size: smaller;  
+  div .introduction, div .gallery-title, div .biography{
+    font-size: small;
   }
-  p {
-    font-family: sans-serif,arial;
-    font-size: smaller;
+  .item {
+    height: 150px; /* Set your preferred reduced height here */
+    width: 100%;
+  }
+  .carousel-inner > .item img,
+  .carousel-inner > .item > a > img {
+    width: 20vh;
+    margin: auto;
   }
 }

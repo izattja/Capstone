@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
   <title>Fur Trade</title>
 </head>
 
@@ -34,38 +35,64 @@
       </p>
     </div>
   </div>
-  <div class="introduction">
+  <div class="gallery-title">
     <p>
-      Beaver trappers, beavers, and beaver traps: 
+      Beaver trappers, beavers, and beaver traps
     </p>
   </div>
 
-  <div class="scroll-container">
-    <img src="images/fur-trade/TrappingBeavers.jpg" alt="Mountain men in canoe">
-    <img src="images/fur-trade/Beaver1.jpg" alt="Front view of beaver">
-    <img src="images/fur-trade/Beaver2.jpg" alt="Side view of beaver">
-    <img src="images/fur-trade/BeaverTrap1.jpg" alt="Empty beaver trap">
-    <img src="images/fur-trade/BeaverTrap2.jpg" alt="Beaver trap with captured beaver">
-    <img src="images/fur-trade/Beaver3.jpg" alt="Beaver swimming">
-    <img src="images/fur-trade/Beaver4.jpg" alt="Beaver on beaver lodge">
-    <img src="images/fur-trade/BeaverDam.jpg" alt="Beaver dam across stream">
+<!-- Gallery Grid thumbnails and full-size images-->
+  <div class="gallery">
+    <img src="images/fur-trade/BNail1.jpg" data-full="images/fur-trade/Beav1.jpg" alt="Image 1" data-index="0" >
+    <img src="images/fur-trade/BNail2.jpg" data-full="images/fur-trade/Beav2.jpg" alt="Image 2" data-index="1">
+    <img src="images/fur-trade/BNail3.jpg" data-full="images/fur-trade/Beav3.jpg" alt="Image 3" data-index="2">
+    <img src="images/fur-trade/BNail4.jpg" data-full="images/fur-trade/Beav4.jpg" alt="Image 4" data-index="3">
+    <img src="images/fur-trade/BNail5.jpg" data-full="images/fur-trade/Beav5.jpg" alt="Image 5" data-index="4">
+    <img src="images/fur-trade/BNail6.jpg" data-full="images/fur-trade/Beav6.jpg" alt="Image 6" data-index="5">
+    <img src="images/fur-trade/BNail7.jpg" data-full="images/fur-trade/Beav7.jpg" alt="Image 7" data-index="6">
+    <img src="images/fur-trade/BNail8.jpg" data-full="images/fur-trade/Beav8.jpg" alt="Image 8" data-index="7">
   </div>
 
-  <div class="introduction">
+<!-- Lightbox Modal Box -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <button class="nav-btn prev-btn">&#10094;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Lightbox View">
+    </div>
+    <button class="nav-btn next-btn">&#10095;</button>
+  </div>
+
+  <br>
+  <div class="gallery-title">
     <p>
-      <br>
-      Beaver fur hats popular in North America and Europe:  
-    </p>
+      Beaver fur hats popular in North America and Europe
+    </p>  
   </div>
-  <div class="scroll-container">
-    <img src="images/fur-trade/Hat1.jpg" alt="Furry beaver fur hat with ear muffs">
-    <img src="images/fur-trade/Hat2.jpg" alt="Beaver felt top hat">
-    <img src="images/fur-trade/Hat3.jpg" alt="Beaver felt fedora hat">
-    <img src="images/fur-trade/Hat4.jpg" alt="Men wearing different types of beaver fur hats">
-    <img src="images/fur-trade/Hat8.jpg" alt="Types of beaver fur hats">
-    <img src="images/fur-trade/Hat6.jpg" alt="Early 1900&napos;s man with beaver fur hat">
-    <img src="images/fur-trade/Hat7.jpg" alt="Woman's riding hat">
+
+<!-- Gallery Grid thumbnails and full-size images-->
+  <div class="gallery">
+    <img src="images/fur-trade/HNail1.jpg" data-full="images/fur-trade/Hat1.jpg" alt="Furry beaver fur hat with ear muffs" data-index="8" >
+    <img src="images/fur-trade/HNail2.jpg" data-full="images/fur-trade/Hat2.jpg" alt="Beaver felt top hat" 
+    data-index="9">
+    <img src="images/fur-trade/HNail3.jpg" data-full="images/fur-trade/Hat3.jpg" alt="Beaver felt fedora hat" data-index="10">
+    <img src="images/fur-trade/HNail4.jpg" data-full="images/fur-trade/Hat4.jpg" alt="Men wearing different types of beaver fur hats" data-index="11">
+    <img src="images/fur-trade/HNail6.jpg" data-full="images/fur-trade/Hat6.jpg" alt="Early 1900&napos;s man with beaver fur hat" data-index="12">
+    <img src="images/fur-trade/HNail7.jpg" data-full="images/fur-trade/Hat7.jpg" alt="Woman's riding hat" 
+    data-index="13">
+    <img src="images/fur-trade/HNail8.jpg" data-full="images/fur-trade/Hat8.jpg" alt="Types of beaver fur hats" data-index="14">
   </div>
+
+  <!-- Lightbox Modal Box -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <button class="nav-btn prev-btn">&#10094;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Lightbox View">
+    </div>
+    <button class="nav-btn next-btn">&#10095;</button>
+  </div>
+
   <footer>
     <br>
     <a href="#topofpage">Go to top of page</a>
